@@ -1,0 +1,10 @@
+.countdown-timer {
+  /* text-align: center; */
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.timer {
+  font-size: 1em;
+  color: #333;
+}

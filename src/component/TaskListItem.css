@@ -1,0 +1,27 @@
+.task-list {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+.task-item {
+  display: grid; 
+  grid-template-columns: 1fr auto; 
+  align-items: center; 
+  padding: 10px; 
+  margin: 5px 0; 
+  background-color: #ffdafd; 
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
+}
+
+.task-item:hover {
+  background-color: #ffe0f8; 
+}
+
+.remove-link {
+  padding-right: 1rem;
+  color: #ff0707; 
+  cursor: pointer; 
+  padding-left: 10px; 
+  font-size: 1.2rem;
+}

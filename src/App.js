@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import InputTask from "./component/InputTask";
-
+import CountdownTimer from "./component/CountdownTimer";
+import TaskListItem from "./component/TaskListItems";
+import "./AppStyles.css";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (newTask) => {
-    setTasks([...tasks, newTask]); 
+    setTasks([...tasks, newTask]);
+  };
+
+  // Clear the task list at midnight
+  const refreshTasks = () => {
+    setTasks([]);
+  };
+
+  const removeTask = (index) => {
+    setTasks(tasks.filter((_, taskIndex) => taskIndex !== index));
   };
 
   return (
     <div className="app-container">
-      <h1 className="app-title">To-do task app</h1>
+      <h1 className="app-title">Daily Task</h1>
+      <CountdownTimer onMidnight={refreshTasks} />
       <InputTask addTask={addTask} />
-      <ul className="task-list">
-        {tasks.map((task, index) => (
-          <li className="task-item" key={index}>{task}</li>
-        ))}
-      </ul>
+      <TaskListItem tasks={tasks} removeTask={removeTask} />
     </div>
   );
 };

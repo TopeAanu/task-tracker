@@ -1,0 +1,21 @@
+.task-item {
+  display: flex;
+  justify-content: space-between; /* Distributes space evenly */
+  align-items: center; /* Centers items vertically */
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-text {
+  flex: 1; /* Allows the text to take available space */
+  margin-right: 20px; /* Adds space between text and the 'X' */
+}
+
+.remove-link {
+  color: red; /* Change color to indicate it's clickable */
+  cursor: pointer;
+}
+
+.remove-link:hover {
+  text-decoration: underline; /* Optional: underline on hover */
+}
